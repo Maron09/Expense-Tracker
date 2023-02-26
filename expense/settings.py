@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/4.1/ref/settings/
 """
 
 from pathlib import Path
+from django.contrib import messages
 import os
 import django_heroku
 
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'analysis.apps.AnalysisConfig',
     'authentication.apps.AuthenticationConfig',
+    'user_preferences.apps.UserPreferencesConfig'
 ]
 
 MIDDLEWARE = [
@@ -83,9 +85,9 @@ WSGI_APPLICATION = 'expense.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'django_point',
+        'NAME': 'django_py',
         'USER': 'root',
-        'PASSWORD': 'paul0799',
+        'PASSWORD': 'iloveanime',
         'HOST': '172.17.0.1',
         'PORT': '3306',
     }
@@ -133,6 +135,21 @@ STATICFILES_DIRS = [
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 django_heroku.settings(locals()) 
+
+
+MESSAGE_TAGS = {
+    messages.ERROR : 'danger'
+}
+
+# email
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST = 'smtp.gmail.com'
+EMAIL_HOST_USER = 'example@gmail.com'
+EMAIL_USE_SSL = True
+DEFAULT_FROM_EMAIL = 'example@gmail.com'
+EMAIL_PORT = 465
+EMAIL_HOST_PASSWORD = '**************'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

@@ -25,28 +25,13 @@
   <body>
     
 
-<div class="container-fluid">
-  <div class="row">
 
 
-    <main class="col-md-12">
-        <div class="card">
-                
-        </div>
-      
-        <div class="col md 3">
 
-        </div>
+    <main role="main">
+        {% block content %}
 
-        <div class="col md 6">
-            {% block content %}
-
-            {% endblock %}
-        </div>
-
-        <div class="col md 3">
-            
-        </div>
+        {% endblock %}
     </main>
   </div>
 </div>

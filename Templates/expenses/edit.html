@@ -6,7 +6,7 @@
     <nav aria-label="breadcrumb" style="--bs-breadcrumb-divider: '>';">
         <ol class="breadcrumb">
           <li class="breadcrumb-item"><a href="{% url 'home' %}">Expenses</a></li>
-          <li class="breadcrumb-item active" aria-current="page">Add Expenses</li>
+          <li class="breadcrumb-item active" aria-current="page">Edit Expenses</li>
         </ol>
     </nav>
 
@@ -32,7 +32,7 @@
                 <div class="form-group mt-2">
                     <label for="" style="font-weight: bold;">Category</label>
                     <select class="form-control" name="category">
-                        <option value="category">Select..</option>
+                        <option value="{{values.category}}">{{values.category}}</option>
                         {% for category in categories %}
                             <option name="category" value="{{category.name}}">{{category.name}}</option>
                         {% endfor %}
@@ -44,7 +44,7 @@
                     <input type="date" name="date" id="" class="form-control form-control-sm">
                 </div>
 
-                <input type="submit" value="Submit" class="btn btn-outline-primary btn-primary-sm mt-2 px-3 rounded">
+                <input type="submit" value="Save" class="btn btn-outline-success btn-success-sm mt-2 px-3 rounded">
             </form>
         </div>
     </div>
